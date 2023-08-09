@@ -1,0 +1,19 @@
+.navbar {
+  background-color: rgb(31, 168, 226);
+  border-radius: 0; /* Remove border-radius for a more modern look */
+  padding: 1px;
+}
+
+.navbar-brand {
+  color: #fff;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8d716; /* Change color on hover */
+}
