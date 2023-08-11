@@ -14,7 +14,7 @@ function Menu() {
     
             <Navbar expand="lg" className="navbar">
                 <Container>
-                <Navbar.Brand as={Link} to="">
+                <Navbar.Brand as={Link} to="/Home">
                         <img
                             src="https://umg.edu.gt/miumg/sesion_files/logo_white.png"
                             alt="Mi UMG Logo"

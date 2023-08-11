@@ -11,6 +11,7 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [isValidEmail, setIsValidEmail] = useState(false);
   const [isValidPassword, setIsValidPassword] = useState(false);
+  const [passwordRequirements, setPasswordRequirements] = useState([]);
 
   const validateEmail = (inputEmail) => {
     if (inputEmail.includes('@')) {
@@ -25,6 +26,22 @@ function Login() {
     const hasLowercase = /[a-z]/.test(inputPassword);
     const hasSpecialChar = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(inputPassword);
     const hasCorreo = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+   
+    const requirements = [];
+    if (inputPassword.length < 8) {
+      requirements.push("8 caracteres");
+    }
+    if (!hasUppercase) {
+      requirements.push("una letra mayúscula");
+    }
+    if (!hasLowercase) {
+      requirements.push("una letra minúscula");
+    }
+    if (!hasSpecialChar) {
+      requirements.push("un carácter especial");
+    }
+
+    setPasswordRequirements(requirements);
 
     if (inputPassword.length > 7 && hasUppercase && hasLowercase && hasSpecialChar && isValidEmail && hasCorreo) {
       setIsValidPassword(true);
@@ -69,12 +86,12 @@ function Login() {
           <h6 className="mb-3">Ingrese el Correo Electrónico:</h6>
           <input
             type="email"
-            className="form-control mb-4"
+            className="form-control mb-2"
             value={email}
             onChange={handleChangeEmail}
           />
           <h6>Ingrese la Contraseña:</h6>
-          <div className="input-group mb-4">
+          <div className="input-group mb-2">
             <input
               type={showPassword ? "text" : "password"}
               className="form-control"
@@ -91,6 +108,11 @@ function Login() {
               </button>
             </div>
           </div>
+          {!isValidPassword && (
+            <p className="text-danger mt-2">
+              La contraseña debe tener al menos: {passwordRequirements.join(", ")}
+            </p>
+          )}
           <button
             className="btn btn-primary"
             onClick={handleLogin}
