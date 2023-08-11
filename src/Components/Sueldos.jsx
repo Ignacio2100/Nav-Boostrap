@@ -28,12 +28,12 @@ function Calculo() {
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
-      <div className="col-lg-4 col-md-6">
+    <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: '80vh' }}>
+      <div className="col-lg-5 col-md-6">
         <div className="card p-4 shadow-sm">
           <h4 className="mb-4 text-center">Cálculo de Sueldo</h4>
           <div className="mb-3">
-            <h5>Ingrese El Sueldo:</h5>
+            <h6>Ingrese El Sueldo:</h6>
             <input
               type="number"
               className="form-control"
@@ -42,7 +42,7 @@ function Calculo() {
             />
           </div>
           <div className="mb-3">
-            <h5>Ingrese El Aumento Salarial:</h5>
+            <h6>Ingrese El Aumento Salarial:</h6>
             <input
               type="number"
               className="form-control"
@@ -51,7 +51,7 @@ function Calculo() {
             />
           </div>
           <div className="mb-4">
-            <h5>Ingrese El Descuento Variable:</h5>
+            <h6>Ingrese El Descuento Variable:</h6>
             <input
               type="number"
               className="form-control"
@@ -60,7 +60,7 @@ function Calculo() {
             />
           </div>
           <div className="text-center">
-            <h5>Resultados:</h5>
+            <h4>Resultados:</h4>
             <h6>IGSS (4.83%): {calcularIGSS()}</h6>
             <h6>Total a Pagar: {calcularTotalAPagar()}</h6>
           </div>
