@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
 
-
-
-function Login() {
+function Login({Abrir}) {
+  const navigate = useNavigate(); // Obtén la función de navegación
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("Error: Validación de Datos");
@@ -21,6 +21,7 @@ function Login() {
     }
   };
 
+ 
   const validatePassword = (inputPassword) => {
     const hasUppercase = /[A-Z]/.test(inputPassword);
     const hasLowercase = /[a-z]/.test(inputPassword);
@@ -70,14 +71,23 @@ function Login() {
     setShowPassword(!showPassword);
   };
 
+  // const handleLogin = () => {
+  //   if (isValidEmail && isValidPassword) {
+  //     // Aquí podrías redirigir a otro componente o realizar alguna acción de autenticación
+  //     alert("Login exitoso");
+  //   } else {
+  //     alert("Datos incorrectos");
+  //   }
+  // };
+
+
   const handleLogin = () => {
     if (isValidEmail && isValidPassword) {
-      // Aquí podrías redirigir a otro componente o realizar alguna acción de autenticación
-      alert("Login exitoso");
+        Abrir();
     } else {
-      alert("Datos incorrectos");
+        alert("Datos incorrectos");
     }
-  };
+};
 
   return (
     <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: '80vh' }}>

@@ -14,7 +14,7 @@ function Menu() {
     
             <Navbar expand="lg" className="navbar">
                 <Container>
-                <Navbar.Brand as={Link} to="/Home">
+                <Navbar.Brand as={Link} to="/">
                         <img
                             src="https://umg.edu.gt/miumg/sesion_files/logo_white.png"
                             alt="Mi UMG Logo"
@@ -27,7 +27,6 @@ function Menu() {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link as={Link} to="/Login">REGISTRAR</Nav.Link>
                             <Nav.Link as={Link} to="/Sueldos">CONTROL DE SUELDOS</Nav.Link>
                             <Nav.Link as={Link} to="/Clientes">CLIENTES</Nav.Link>
                             <Nav.Link as={Link} to="/Producto">PRODUCTOS</Nav.Link>
